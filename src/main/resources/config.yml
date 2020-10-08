@@ -1,0 +1,4 @@
+sit-permission-default: true
+sitdown-message: '&bВы сели.'
+situp-message: '&bВы встали.'
+sitfail-message: '&cВы не можете сидеть в воздухе!'

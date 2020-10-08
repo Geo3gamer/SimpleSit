@@ -1,0 +1,8 @@
+﻿name: SimpleSit
+main: ru.sliva.simplesit.SimpleSit
+version: 1.0
+description: Плагин который позволяет отдохнуть седалищу
+author: CJluBaToP229
+commands:
+  sit:
+    description: Сидеть где хочешь!
