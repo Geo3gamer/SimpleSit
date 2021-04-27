@@ -1,29 +1,25 @@
-package ru.sliva.simplesit.events;
+package net.apcat.simplesit.events;
 
-import org.bukkit.event.*;
-import org.bukkit.entity.*;
+import org.bukkit.entity.Player;
+import org.bukkit.event.HandlerList;
+import org.bukkit.event.player.PlayerEvent;
 
-public class PlayerStopLayingEvent extends Event
-{
-    private static final HandlerList handlers;
-    private Player player;
+public class PlayerStopLayingEvent extends PlayerEvent {
+	
+    private static HandlerList handlers;
     private String message;
     
     static {
         handlers = new HandlerList();
     }
     
-    public PlayerStopLayingEvent(final Player player, final String message) {
-        this.player = player;
+    public PlayerStopLayingEvent(Player player, String message) {
+    	super(player);
         this.message = message;
     }
     
-    public Player getPlayer() {
-        return this.player;
-    }
-    
     public String getMessage() {
-        return this.message;
+        return message;
     }
     
     public void setMessage(final String message) {

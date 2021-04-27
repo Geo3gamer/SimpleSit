@@ -1,12 +1,13 @@
-package ru.sliva.simplesit.events;
+package net.apcat.simplesit.events;
 
-import org.bukkit.event.*;
-import org.bukkit.entity.*;
+import org.bukkit.entity.ArmorStand;
+import org.bukkit.entity.Player;
+import org.bukkit.event.HandlerList;
+import org.bukkit.event.player.PlayerEvent;
 
-public class PlayerStopSittingEvent extends Event
-{
-    private static final HandlerList handlers;
-    private Player player;
+public class PlayerStopSittingEvent extends PlayerEvent {
+	
+    private static HandlerList handlers;
     private ArmorStand seat;
     private String message;
     
@@ -14,14 +15,10 @@ public class PlayerStopSittingEvent extends Event
         handlers = new HandlerList();
     }
     
-    public PlayerStopSittingEvent(final Player player, final ArmorStand seat, final String message) {
-        this.player = player;
+    public PlayerStopSittingEvent(Player player, ArmorStand seat, String message) {
+        super(player);
         this.seat = seat;
         this.message = message;
-    }
-    
-    public Player getPlayer() {
-        return this.player;
     }
     
     public ArmorStand getSeat() {
